@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Badminton Court</title>
+    <link rel="stylesheet" href="proto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section id="home">
+    <header class="header">
+      <a href="index.html"><img class="logo slide-in-fwd-tr" src="galaxy1.png"></a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </header>
+    <div class="container">
+      <a href="#home">
+        <img src="bg3-removebg-preview.png" alt="Fixed Image" class="fixed-image">
+      </a>
+    </div>
+    
+      <div class="text-box">
+        <h1>Play Badminton Today</h1>
+        <p>Welcome to Galaxy Badminton Court Website</p>
+        <a href="contact.html" class="hero-btn">Visit Us Today</a>
+      </div>
+    </div>
+  </section>
+    
+      <section id="bgabout">
+      <section id="aboutus">
+        <h1 class="mainabout">
+          About Us
+        </h1>
+        <div class="row">
+          <div class="about-col">
+            <h1> Galaxy Badminton Court is one of the mostly used and common court around Malabon City</h1>
+            <p> They are open from 8:00 a.m. to 1 a.m. every day with a rate of 200 pesos per hour as a rental fee. It is called Galaxy Badminton 
+              Court because of its uniqueness as a name for a badminton court.</p> 
+        <a href="about.html" class="red-btn">Wanna Know More?</a>
+          </div>
+          <div class="about-col">
+            <img src="landmark.jpg">
+          </div>
+          </div>
+      </section>
+    </section>
+      <section id="bgabout">
+      <section id="cta">
+      <h1 class="mainabout">Trainings hosted Inside</h1>
+        <div class="row">
+          <div class="ctacol">
+            <h3>JSBC Trainings</h3>
+            <p>Coach Jesrick leads the JSBC team, which stands for Jheykez Smasher Badminton Club. Once on the team, you 
+              are already treated as a champion, and you treat<br> everybody on the team as a champion. The team provides 20 
+              paid sessions at Galaxy badminton courts, with a tournament after each session to showcase the improvements
+               made by participants.
+            </p>
+          </div>
+          <div class="ctacol">
+            <h3>Seranno Twins Trainings</h3>
+            <p>Jonas Serrano leads the Serrano Twins, named after himself. The Serrano came from the name of the coach 
+              himself, and the Twins are how they treat each other, which corresponds to siblings and treating them 
+              equally. The team trains at Galaxy badminton<br> court, which is accessible to 10 years old and older. The 
+              trainings, which include 20 sessions, are paid with benefits and culminate in a tournament where 
+              participants showcase their improvements.</p>
+          </div>
+          <div class="ctacol">
+            <h3>Team A</h3>
+            <p>Amboy Deguzman leads Team A, named after the first letter in the alphabet. This team symbolizes that they
+               are always first and on top. The training program, which includes 20 sessions and a competition, aims to 
+               improve badminton players at the Galaxy badminton court, offering benefits and opportunities for competition.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+      <script>
+        window.addEventListener('scroll', function() {
+  var image = document.querySelector('.fixed-image');
+  var container = document.querySelector('.container');
+  var containerTop = container.getBoundingClientRect().top;
+
+  if (containerTop <= 0) {
+    image.classList.add('show');
+  } else {
+    image.classList.remove('show');
+  }
+});
+      </script>
+</body>
+</html>
