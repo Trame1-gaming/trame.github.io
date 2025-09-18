@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll to Reveal 3D Model</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    #section1 {
+      background: #f0f0f0;
+    }
+
+    #section2 {
+      background: #222;
+      color: white;
+      position: relative;
+    }
+
+    .model-container {
+      width: 100%;
+      height: 600px;
+      max-width: 1000px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .model-container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="section1">
+    Scroll down to see the 3D model
+  </section>
+
+  <section id="section2">
+    <div class="model-container" id="viewer"></div>
+  </section>
+
+  <!-- Load Three.js and GLTFLoader -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <script>
+    // Fade in when Section 2 is visible
+    const viewer = document.getElementById("viewer");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          viewer.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(viewer);
+
+    // THREE.js setup
+    let scene, camera, renderer, model, mixer;
+    scene = new THREE.Scene();
+
+    camera = new THREE.PerspectiveCamera(45, viewer.clientWidth / viewer.clientHeight, 0.1, 100);
+    camera.position.set(0, 1.5, 4);
+
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(viewer.clientWidth, viewer.clientHeight);
+    viewer.appendChild(renderer.domElement);
+
+    // Lighting
+    const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1.5);
+    scene.add(light);
+
+    // Load 3D model
+    const loader = new THREE.GLTFLoader();
+    loader.load(
+      "https://threejs.org/examples/models/gltf/RobotExpressive/RobotExpressive.glb",
+      function (gltf) {
+        model = gltf.scene;
+        model.scale.set(1.5, 1.5, 1.5);
+        scene.add(model);
+
+        mixer = new THREE.AnimationMixer(model);
+        gltf.animations.forEach(clip => {
+          mixer.clipAction(clip).play();
+        });
+      },
+      undefined,
+      function (error) {
+        console.error("Model loading error:", error);
+      }
+    );
+
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      if (mixer) mixer.update(clock.getDelta());
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Make the canvas responsive
+    window.addEventListener("resize", () => {
+      camera.aspect = viewer.clientWidth / viewer.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(viewer.clientWidth, viewer.clientHeight);
+    });
+  </script>
+
+</body>
+</html>
