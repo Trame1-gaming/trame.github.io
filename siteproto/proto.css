@@ -1,0 +1,393 @@
+*{
+
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/*Home*/
+header{
+  top:0;
+  left:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  transition:.7s;
+  padding:40px 100px;
+  z-index: 100000;
+  font-family:"Oswold" ,sans-serif;
+  
+}
+header.sticky{
+  padding:5px 100px;
+  background:#000;
+  opacity:.8;
+  transition:.7s;
+}
+header .logo{
+  position:relative;
+  width:175px;
+  height:160px;
+  transition:.6s;
+}
+a{
+    text-decoration: none;
+}
+header ul{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  -webkit-animation: slide-in-fwd-tr 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-fwd-tr 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+header ul li{
+  position:relative;
+  list-style: none;
+}
+header ul li a:hover  {
+  color: #7df9ff;
+  transform:scaleX(1.5);
+}
+header.sticky ul li:hover a {
+  color: #7df9ff;
+
+}
+
+header ul li a{
+  position:relative;
+  margin:0 15px;
+  text-decoration: none;
+  color:#fff;
+  letter-spacing: 2px;
+  font-weight:bold;
+  transition:.5s;
+  text-transform: UPPERCASE;
+}
+#home{
+  position:relative;
+  width:100%;
+  height:100vh;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(galaxybg1.jpg );
+  background-size:cover;
+}
+header.sticky ul li a{
+  color:#ffff;
+}
+.text-box{
+  width: 90%;
+  color:#fff;
+  position: absolute;
+  top: 37%;
+  left:6%;
+  transform:translate(-50%, -50%);
+  text-align:center;
+  -webkit-animation: slide-in-bck-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s both;
+  animation: slide-in-bck-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s both;
+}
+.text-box h1{
+  font-size:62px;
+  text-transform: uppercase;
+}
+.text-box p{
+  margin:10px 0 40px;
+  font-size:18px;
+  color:#fff;
+}
+.hero-btn{
+  display:inline-block;
+  text-decoration:none;
+  color:#fff;
+  border:1px solid #7df9ff;
+  padding: 12px 34px;
+  font-size:16px;
+  background:transparent;
+  position: relative;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.hero-btn:hover{
+  background:#7df9ff;
+  color:#000;
+  transition:.5s ease-out;
+}
+#bgabout{
+  background: url(1.png );
+}
+#aboutus{
+  width: 80%;
+  margin:auto;
+  padding-top:100px;
+}
+.mainabout{
+  font-size:43px;
+  font-weight:bold;
+  text-align: center;
+}
+.myabout{
+  font-size:36px;
+  font-weight: 600;
+}
+.about-col{
+  flex-basis:48%;
+  padding: 30px 2px;  
+  bottom:50%;
+  height:500px;
+}
+.about-col img{
+  width:100%;
+}
+.row{
+  margin-top:5%;
+  display:flex;
+  justify-content:space-between;
+}
+.about-col h1 p{
+  padding-top:50%;
+  bottom:50%;
+  text-align: center;
+}
+.red-btn{
+  border: 2px solid #4FB200;
+  background: transparent;
+  color:#4FB200;
+}
+.red-btn{
+  top: 4%;
+  display:inline-block;
+  text-decoration:none;
+  padding: 12px 34px;
+  font-size:16px;
+  background:transparent;
+  position: relative;
+  cursor: pointer;
+}
+.red-btn:hover{
+  color:#fff;
+  background:#4FB200;
+  transition: 1s;
+}
+#gallery{
+  width:80%;
+  margin:auto;
+  text-align:center;
+  padding-top: 50px;
+
+}
+.gallery-col{
+  flex-basis:32%;
+  border-radius: 10px;
+  margin-bottom:30px;
+  position:relative;
+  overflow:hidden;
+  box-shadow: 20px 20px 10px grey;
+}
+.gallery-col img{
+  width: 100%;
+  display:block;
+}
+.row1{
+  margin-top:5%;
+  display:flex;
+  justify-content:space-between;
+}
+
+#cta{
+  width: 80%;
+  margin:auto;
+  padding-top:100px;
+  text-align: center;
+}
+
+ #footer h4{
+  margin-bottom: 25px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+.icons svg{
+  color:#7df9ff;
+  margin: 0 13px;
+  cursor: pointer;
+  padding: 18px 0;
+  height:100px;
+  width: 100px;
+  transition: .7s;
+}
+.icons svg:hover{
+  transform: scale(1.5);
+}
+ /*About us Tab*/
+
+#sub-header{
+  height:70vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,.8), rgba(4,9,30,.8)), url(galaxybg1.jpg);
+  background-position: center;
+  background-size:cover;
+  text-align: center;
+  color:#fff;
+}
+#sub-header h1{
+  margin-top: 50px;
+}
+.border1{
+  color: #fff;
+  border: 2px solid #7DF9FF;
+  padding: 13px 20px;
+  background-color: transparent;
+  width: 650px;
+  height: 150px;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #7DF9FF;
+  position: absolute; 
+  top: 73%;
+  left:27%;
+  text-align:center;
+}
+.border2, .border3, .border4, .border5 {
+  padding: 13px 20px;
+  color: #fff;
+  border: 2px solid #7DF9FF;
+  padding-top: 20px;
+  background-color: transparent;
+  width: 400px;
+  height: 125px;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #7DF9FF;
+  position: absolute;
+  text-align:center;
+
+}
+
+.border2 {
+  top: 22%;
+  left: 10%;
+}
+
+.border3 {
+  top: 22% ;
+  left: 59%;
+}
+
+.border4 {
+  top: 47%;
+  left: 18%;
+}
+
+.border5 {
+  top: 47%;
+  left: 53%;
+}
+.container {
+  position: relative;
+  height: 1800px; /* Set a height for the container to enable scrolling */
+}
+
+.fixed-image {
+  position: fixed;
+  top: 77%; /* Adjust the top position as per your requirement */
+  left: 88%; /* Adjust the left position as per your requirement */
+  width: 225px; /* Adjust the width as per your requirement */
+  opacity: 0; /* Initially hide the image */
+  transition: opacity 0.3s ease-in-out; /* Add a smooth transition effect */
+  z-index: 1;
+  fill:#5271FF;
+}
+
+.fixed-image.show {
+  opacity: 2; /* Show the image when the class "show" is added */
+}
+.ctacol{
+  flex-basis: 31%;
+  background: rgba(125,249,255,.5);
+  border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: .8s;
+}
+#cta{
+  width: 80%;
+  margin:auto;
+  padding-top:100px;
+  text-align: center;
+  opacity:1;
+}
+.row{
+  margin-top:5%;
+  display:flex;
+  justify-content:space-between;
+}
+.button img{
+  padding-top:8px;
+}
+#cta .ctacol:hover {
+  transform: scale(1.05); /* Increase the size of the element */
+  transition: transform 0.3s ease-in-out; /* Add a transition effect */
+}
+.text-box {
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s both;
+          animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s both;
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+.header {
+  position: relative;
+}
+
+.header .slide-in-fwd-tr {
+  -webkit-animation: slide-in-fwd-tr 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: slide-in-fwd-tr 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-fwd-tr {
+  0% {
+    -webkit-transform: translateZ(-1400px) translateY(-800px) translateX(1000px);
+            transform: translateZ(-1400px) translateY(-800px) translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0) translateX(0);
+            transform: translateZ(0) translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-fwd-tr {
+  0% {
+    -webkit-transform: translateZ(-1400px) translateY(-800px) translateX(1000px);
+            transform: translateZ(-1400px) translateY(-800px) translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0) translateX(0);
+            transform: translateZ(0) translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
